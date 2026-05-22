@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  extract_load:
+  extract_transform_load:
     runs-on: ubuntu-latest
     env:
       DEV_MODE: "True"
@@ -23,8 +23,11 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Extract
+      - name: 1. Extract (Capa Bronze)
         run: python scripts/extract.py
           
-      - name: Load (Simulacion Hive-style)
+      - name: 2. Transform (Capa Silver - DuckDB)
+        run: python scripts/transform_silver_laps.py
+
+      - name: 3. Load (Simulacion Hive-style)
         run: python scripts/load.py
