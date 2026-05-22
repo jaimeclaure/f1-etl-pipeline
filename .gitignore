@@ -1,0 +1,11 @@
+# Entornos y secretos
+.env
+*.json
+__pycache__/
+venv/
+env/
+
+# Carpetas de datos locales (no se suben a GitHub)
+caching/
+data/raw/
+mock_gcs_bucket/

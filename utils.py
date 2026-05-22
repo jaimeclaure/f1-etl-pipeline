@@ -10,9 +10,11 @@ GCS_BUCKET = os.getenv("GCS_BUCKET", "mi-bucket-f1")
 RAW_PREFIX = "dev_raw" if DEV_MODE else "raw"
 
 RAW_DATA_DIR = 'data/raw'
+SILVER_DATA_DIR = 'data/silver'
 CACHE_DIR = 'caching'
 
 os.makedirs(RAW_DATA_DIR, exist_ok=True)
+os.makedirs(SILVER_DATA_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 def slugify(text):
