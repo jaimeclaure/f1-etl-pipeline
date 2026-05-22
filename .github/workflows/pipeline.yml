@@ -1,0 +1,30 @@
+name: ETL F1 to GCS (Simulado)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  extract_load:
+    runs-on: ubuntu-latest
+    env:
+      DEV_MODE: "True"
+    
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Extract
+        run: python scripts/extract.py
+          
+      - name: Load (Simulacion Hive-style)
+        run: python scripts/load.py
