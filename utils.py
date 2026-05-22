@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DEV_MODE = os.getenv("DEV_MODE", "True").lower() == "true"
-GCS_BUCKET = os.getenv("GCS_BUCKET", "mi-bucket-f1-tarija")
+GCS_BUCKET = os.getenv("GCS_BUCKET", "mi-bucket-f1")
 RAW_PREFIX = "dev_raw" if DEV_MODE else "raw"
 
 RAW_DATA_DIR = 'data/raw'

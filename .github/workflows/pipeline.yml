@@ -1,4 +1,4 @@
-name: ETL F1 to GCS (Simulado)
+name: ETL F1 to GCS
 
 on:
   push:

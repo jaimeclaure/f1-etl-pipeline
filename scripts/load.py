@@ -8,10 +8,10 @@ from utils import RAW_PREFIX, RAW_DATA_DIR
 MOCK_BUCKET_DIR = 'mock_gcs_bucket'
 
 def upload_to_gcs_simulation():
-    print("\n=== INICIANDO CARGA (SIMULACIÓN DATA LAKE LOCAL) ===")
+    print("\n iniciamos carga del data lake")
     
     if not os.path.exists(RAW_DATA_DIR):
-        print("No hay datos locales para cargar.")
+        print("No hay datos")
         return
 
     for filename in os.listdir(RAW_DATA_DIR):
@@ -29,7 +29,7 @@ def upload_to_gcs_simulation():
             shutil.copy(filepath, destino_archivo)
             print(f"  -> Archivo alojado en: gs://{MOCK_BUCKET_DIR}/{RAW_PREFIX}/{dataset}/year={year}/{filename}")
             
-    print("=== CARGA COMPLETADA ===")
+    print("carga completa")
 
 if __name__ == "__main__":
     upload_to_gcs_simulation()

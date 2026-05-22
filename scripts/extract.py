@@ -2,7 +2,7 @@ import fastf1
 import sys
 import os
 
-# Apuntamos a la raíz para encontrar utils.py
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import CACHE_DIR, slugify, guardar_a_parquet
 
@@ -32,9 +32,9 @@ def extract_session(year, round_num):
         print(f"  [!] Info ronda {round_num} del {year}: {e}")
 
 if __name__ == "__main__":
-    print("=== INICIANDO EXTRACCIÓN ===")
+    print("iniciando extraccion ")
     for year in YEARS:
         extract_schedule(year)
         for r in ROUNDS:
             extract_session(year, r)
-    print("=== EXTRACCIÓN COMPLETADA ===")
+    print("extraccion completaa")
